@@ -43,5 +43,11 @@ namespace NotePad3
             }
 
         }
+
+        private void updateStatusIndicators(object sender, EventArgs e)
+        {
+            toolStripStatusLabelLength.Text = "Length: " + textBoxDocument.TextLength;
+            toolStripStatusLabelCursorPosition.Text = "Pos: (" + textBoxDocument.SelectionStart + ")";
+        }
     }
 }

@@ -96,7 +96,7 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S;
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
@@ -104,7 +104,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.exitToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q;
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
@@ -155,15 +155,7 @@
             this.statusStripMain.Size = new System.Drawing.Size(800, 23);
             this.statusStripMain.TabIndex = 1;
             this.statusStripMain.Text = "statusStripMain";
-            // 
-            // toolStripStatusLabelFileName
-            // 
-            this.toolStripStatusLabelFileName.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripStatusLabelFileName.Margin = new System.Windows.Forms.Padding(1);
-            this.toolStripStatusLabelFileName.Name = "toolStripStatusLabelFileName";
-            this.toolStripStatusLabelFileName.Padding = new System.Windows.Forms.Padding(2);
-            this.toolStripStatusLabelFileName.Size = new System.Drawing.Size(49, 21);
-            this.toolStripStatusLabelFileName.Text = this.tabPage1.Text;
+
             // 
             // tabPage1
             // 
@@ -176,6 +168,15 @@
             this.tabPage1.Text = "New 1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // toolStripStatusLabelFileName
+            // 
+            this.toolStripStatusLabelFileName.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripStatusLabelFileName.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripStatusLabelFileName.Name = "toolStripStatusLabelFileName";
+            this.toolStripStatusLabelFileName.Padding = new System.Windows.Forms.Padding(2);
+            this.toolStripStatusLabelFileName.Size = new System.Drawing.Size(49, 21);
+            this.toolStripStatusLabelFileName.Text = this.tabPage1.Text;
+            // 
             // textBoxDocument
             // 
             this.textBoxDocument.AcceptsReturn = true;
@@ -187,7 +188,11 @@
             this.textBoxDocument.Name = "textBoxDocument";
             this.textBoxDocument.Size = new System.Drawing.Size(786, 370);
             this.textBoxDocument.TabIndex = 0;
-            this.textBoxDocument.Text = "Trying to prove a point";
+            this.textBoxDocument.Text = "";
+            this.textBoxDocument.KeyDown += new System.Windows.Forms.KeyEventHandler(this.updateStatusIndicators);
+            this.textBoxDocument.MouseClick += new System.Windows.Forms.MouseEventHandler(this.updateStatusIndicators);
+            this.textBoxDocument.TextChanged += new System.EventHandler(this.updateStatusIndicators);
+
             // 
             // toolStripStatusLabelCursorPosition
             // 
@@ -216,7 +221,7 @@
             // 
             this.toolStripStatusLabelLength.Name = "toolStripStatusLabelLength";
             this.toolStripStatusLabelLength.Size = new System.Drawing.Size(163, 18);
-            this.toolStripStatusLabelLength.Text = "Length: " + this.textBoxDocument.TextLength;
+            this.toolStripStatusLabelLength.Text = "Length: 0";
             // 
             // FormMainWindow
             // 
