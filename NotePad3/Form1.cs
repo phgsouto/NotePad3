@@ -22,8 +22,8 @@ namespace NotePad3
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string msgText = "Notepad3 version " + Version + ". Built on " + BuildDate;
-            MessageBox.Show(msgText);
+            var _about = new AboutBox1();
+            _about.Show();
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
