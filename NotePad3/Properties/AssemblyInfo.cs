@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("NotePad3")]
-[assembly: AssemblyDescription("Simple (and purely educational) notepad clone")]
+[assembly: AssemblyDescription("Simple (and purely educational) notepad clone.\r\n\r\nThis software is distributed under the MIT license ( https://opensource.org/licenses/MIT ).\r\n\r\nSource Code: https://github.com/phgsouto/Notepad3")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("phgsouto https://github.com/phgsouto/")]
 [assembly: AssemblyProduct("NotePad3")]
-[assembly: AssemblyCopyright("This software is distributed under the MIT license ( https://opensource.org/licenses/MIT )")]
-[assembly: AssemblyTrademark("Source Code: https://github.com/phgsouto/Notepad3")]
+[assembly: AssemblyCopyright("")]
+[assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
