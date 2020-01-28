@@ -7,10 +7,16 @@ namespace NotePad3
     public partial class FormMainWindow : Form
     {
 
+        public string fileName { get; set; }
+        public bool fileSaved { get; set; }
+
         public FormMainWindow()
         {
             InitializeComponent();
-            toolStripStatusLabelFileName.Text = tabPage1.Text;
+            fileName = "New 1";
+            toolStripStatusLabelFileName.Text = fileName;
+            Text = fileName + " | " + Text;
+            ActiveControl = textBoxDocument;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -68,6 +74,12 @@ namespace NotePad3
                 textBoxDocument.WordWrap = true;
                 wordWrapToolStripMenuItem.Checked = true;
             }
+        }
+
+        private void updateStatusIndicators(object sender, MouseEventArgs e)
+        {
+            toolStripStatusLabelCursorPosition.Text = textBoxDocument.SelectionStart.ToString();
+            toolStripStatusLabelLength.Text = textBoxDocument.Text.Length.ToString();
         }
     }
 }
