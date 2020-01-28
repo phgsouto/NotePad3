@@ -55,5 +55,19 @@ namespace NotePad3
             textBoxDocument.Text = textBoxDocument.Text.Insert(caretPosition, dateAndTime);
             textBoxDocument.SelectionStart = caretPosition + dateAndTime.Length;
         }
+
+        private void wordWrapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (textBoxDocument.WordWrap)
+            {
+                textBoxDocument.WordWrap = false;
+                wordWrapToolStripMenuItem.Checked = false;
+            }
+            else
+            {
+                textBoxDocument.WordWrap = true;
+                wordWrapToolStripMenuItem.Checked = true;
+            }
+        }
     }
 }

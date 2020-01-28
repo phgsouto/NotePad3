@@ -36,7 +36,9 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.insertTimestampToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wordWrapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,7 +52,6 @@
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.insertTimestampToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.statusStripMain.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -120,11 +121,30 @@
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
+            // insertTimestampToolStripMenuItem
+            // 
+            this.insertTimestampToolStripMenuItem.Name = "insertTimestampToolStripMenuItem";
+            this.insertTimestampToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.insertTimestampToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.insertTimestampToolStripMenuItem.Text = "Insert Timestamp";
+            this.insertTimestampToolStripMenuItem.Click += new System.EventHandler(this.insertTimestampToolStripMenuItem_Click);
+            // 
             // formatToolStripMenuItem
             // 
+            this.formatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.wordWrapToolStripMenuItem});
             this.formatToolStripMenuItem.Name = "formatToolStripMenuItem";
             this.formatToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.formatToolStripMenuItem.Text = "Format";
+            // 
+            // wordWrapToolStripMenuItem
+            // 
+            this.wordWrapToolStripMenuItem.Checked = true;
+            this.wordWrapToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.wordWrapToolStripMenuItem.Name = "wordWrapToolStripMenuItem";
+            this.wordWrapToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.wordWrapToolStripMenuItem.Text = "Word Wrap";
+            this.wordWrapToolStripMenuItem.Click += new System.EventHandler(this.wordWrapToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -246,14 +266,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // insertTimestampToolStripMenuItem
-            // 
-            this.insertTimestampToolStripMenuItem.Name = "insertTimestampToolStripMenuItem";
-            this.insertTimestampToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.insertTimestampToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.insertTimestampToolStripMenuItem.Text = "Insert Timestamp";
-            this.insertTimestampToolStripMenuItem.Click += new System.EventHandler(this.insertTimestampToolStripMenuItem_Click);
-            // 
             // FormMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,6 +314,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelLength;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelZoom;
         private System.Windows.Forms.ToolStripMenuItem insertTimestampToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wordWrapToolStripMenuItem;
     }
 }
 
