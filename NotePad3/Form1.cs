@@ -32,7 +32,7 @@ namespace NotePad3
             saveFile.DefaultExt = ".txt";
             DialogResult result = saveFile.ShowDialog();
 
-            if (result == DialogResult.OK) 
+            if (result == DialogResult.OK)
             {
                 FileStream fs = new FileStream(saveFile.FileName, FileMode.Create);
                 StreamWriter writer = new StreamWriter(fs);
@@ -46,6 +46,14 @@ namespace NotePad3
         {
             toolStripStatusLabelLength.Text = "Length: " + textBoxDocument.TextLength;
             toolStripStatusLabelCursorPosition.Text = "Pos: (" + textBoxDocument.SelectionStart + ")";
+        }
+
+        private void insertTimestampToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var caretPosition = textBoxDocument.SelectionStart;
+            var dateAndTime = System.DateTime.Now.ToString();
+            textBoxDocument.Text = textBoxDocument.Text.Insert(caretPosition, dateAndTime);
+            textBoxDocument.SelectionStart = caretPosition + dateAndTime.Length;
         }
     }
 }

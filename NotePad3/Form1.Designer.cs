@@ -50,6 +50,7 @@
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.insertTimestampToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.statusStripMain.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -113,6 +114,8 @@
             // 
             // editToolStripMenuItem
             // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.insertTimestampToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
@@ -243,6 +246,14 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // insertTimestampToolStripMenuItem
+            // 
+            this.insertTimestampToolStripMenuItem.Name = "insertTimestampToolStripMenuItem";
+            this.insertTimestampToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.insertTimestampToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.insertTimestampToolStripMenuItem.Text = "Insert Timestamp";
+            this.insertTimestampToolStripMenuItem.Click += new System.EventHandler(this.insertTimestampToolStripMenuItem_Click);
+            // 
             // FormMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,6 +301,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelLength;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelZoom;
+        private System.Windows.Forms.ToolStripMenuItem insertTimestampToolStripMenuItem;
     }
 }
 
