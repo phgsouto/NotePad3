@@ -201,7 +201,7 @@
             this.toolStripStatusLabelCursorPosition.Name = "toolStripStatusLabelCursorPosition";
             this.toolStripStatusLabelCursorPosition.Padding = new System.Windows.Forms.Padding(2);
             this.toolStripStatusLabelCursorPosition.Size = new System.Drawing.Size(100, 20);
-            this.toolStripStatusLabelCursorPosition.Text = "Pos: (0)";
+            this.toolStripStatusLabelCursorPosition.Text = "Ln 1, Col 1";
             // 
             // toolStripStatusLabelLength
             // 

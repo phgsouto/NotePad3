@@ -50,8 +50,9 @@ namespace NotePad3
 
         private void updateStatusIndicators(object sender, EventArgs e)
         {
-            toolStripStatusLabelLength.Text = "Length: " + textBoxDocument.TextLength;
-            toolStripStatusLabelCursorPosition.Text = "Pos: (" + textBoxDocument.SelectionStart + ")";
+            toolStripStatusLabelCursorPosition.Text =
+                "Ln " + (textBoxDocument.GetLineFromCharIndex(textBoxDocument.SelectionStart) + 1).ToString() +
+                ", Col " + (textBoxDocument.SelectionStart - textBoxDocument.GetFirstCharIndexFromLine(textBoxDocument.GetLineFromCharIndex(textBoxDocument.SelectionStart)) + 1).ToString();
         }
 
         private void insertTimestampToolStripMenuItem_Click(object sender, EventArgs e)
@@ -74,12 +75,6 @@ namespace NotePad3
                 textBoxDocument.WordWrap = true;
                 wordWrapToolStripMenuItem.Checked = true;
             }
-        }
-
-        private void updateStatusIndicators(object sender, MouseEventArgs e)
-        {
-            toolStripStatusLabelCursorPosition.Text = textBoxDocument.SelectionStart.ToString();
-            toolStripStatusLabelLength.Text = textBoxDocument.Text.Length.ToString();
         }
     }
 }
