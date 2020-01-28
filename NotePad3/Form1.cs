@@ -7,12 +7,10 @@ namespace NotePad3
     public partial class FormMainWindow : Form
     {
 
-        private const string Version = "0.01";
-        private const string BuildDate = "2020-01-24";
-
         public FormMainWindow()
         {
             InitializeComponent();
+            toolStripStatusLabelFileName.Text = tabPage1.Text;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

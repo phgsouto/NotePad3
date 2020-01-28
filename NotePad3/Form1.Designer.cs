@@ -42,10 +42,11 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStripMain = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelFileName = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.textBoxDocument = new System.Windows.Forms.TextBox();
             this.toolStripStatusLabelCursorPosition = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelLength = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelZoom = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textBoxDocument = new System.Windows.Forms.TextBox();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -146,25 +147,59 @@
             // 
             // statusStripMain
             // 
+            this.statusStripMain.AutoSize = false;
             this.statusStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabelFileName,
             this.toolStripStatusLabelCursorPosition,
-            this.toolStripStatusLabelLength});
+            this.toolStripStatusLabelLength,
+            this.toolStripStatusLabelZoom});
             this.statusStripMain.Location = new System.Drawing.Point(0, 428);
             this.statusStripMain.Name = "statusStripMain";
-            this.statusStripMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.statusStripMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
             this.statusStripMain.Size = new System.Drawing.Size(800, 22);
             this.statusStripMain.TabIndex = 1;
             this.statusStripMain.Text = "statusStripMain";
             // 
             // toolStripStatusLabelFileName
             // 
+            this.toolStripStatusLabelFileName.AutoSize = false;
+            this.toolStripStatusLabelFileName.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.toolStripStatusLabelFileName.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripStatusLabelFileName.Margin = new System.Windows.Forms.Padding(1);
             this.toolStripStatusLabelFileName.Name = "toolStripStatusLabelFileName";
             this.toolStripStatusLabelFileName.Padding = new System.Windows.Forms.Padding(2);
-            this.toolStripStatusLabelFileName.Size = new System.Drawing.Size(44, 20);
-            this.toolStripStatusLabelFileName.Text = this.tabPage1.Text;
+            this.toolStripStatusLabelFileName.Size = new System.Drawing.Size(100, 20);
+            // 
+            // toolStripStatusLabelCursorPosition
+            // 
+            this.toolStripStatusLabelCursorPosition.AutoSize = false;
+            this.toolStripStatusLabelCursorPosition.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.toolStripStatusLabelCursorPosition.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripStatusLabelCursorPosition.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripStatusLabelCursorPosition.Name = "toolStripStatusLabelCursorPosition";
+            this.toolStripStatusLabelCursorPosition.Padding = new System.Windows.Forms.Padding(2);
+            this.toolStripStatusLabelCursorPosition.Size = new System.Drawing.Size(100, 20);
+            this.toolStripStatusLabelCursorPosition.Text = "Pos: (0)";
+            // 
+            // toolStripStatusLabelLength
+            // 
+            this.toolStripStatusLabelLength.AutoSize = false;
+            this.toolStripStatusLabelLength.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.toolStripStatusLabelLength.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripStatusLabelLength.Name = "toolStripStatusLabelLength";
+            this.toolStripStatusLabelLength.Padding = new System.Windows.Forms.Padding(2);
+            this.toolStripStatusLabelLength.Size = new System.Drawing.Size(100, 20);
+            this.toolStripStatusLabelLength.Text = "Length: 0";
+            // 
+            // toolStripStatusLabelZoom
+            // 
+            this.toolStripStatusLabelZoom.AutoSize = false;
+            this.toolStripStatusLabelZoom.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.toolStripStatusLabelZoom.Margin = new System.Windows.Forms.Padding(1);
+            this.toolStripStatusLabelZoom.Name = "toolStripStatusLabelZoom";
+            this.toolStripStatusLabelZoom.Padding = new System.Windows.Forms.Padding(2);
+            this.toolStripStatusLabelZoom.Size = new System.Drawing.Size(100, 20);
+            this.toolStripStatusLabelZoom.Text = "100%";
             // 
             // tabPage1
             // 
@@ -181,31 +216,18 @@
             // 
             this.textBoxDocument.AcceptsReturn = true;
             this.textBoxDocument.AcceptsTab = true;
+            this.textBoxDocument.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxDocument.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxDocument.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDocument.Location = new System.Drawing.Point(3, 3);
             this.textBoxDocument.Multiline = true;
             this.textBoxDocument.Name = "textBoxDocument";
+            this.textBoxDocument.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxDocument.Size = new System.Drawing.Size(786, 372);
             this.textBoxDocument.TabIndex = 0;
             this.textBoxDocument.MouseClick += new System.Windows.Forms.MouseEventHandler(this.updateStatusIndicators);
             this.textBoxDocument.TextChanged += new System.EventHandler(this.updateStatusIndicators);
             this.textBoxDocument.KeyDown += new System.Windows.Forms.KeyEventHandler(this.updateStatusIndicators);
-            // 
-            // toolStripStatusLabelCursorPosition
-            // 
-            this.toolStripStatusLabelCursorPosition.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripStatusLabelCursorPosition.Margin = new System.Windows.Forms.Padding(1);
-            this.toolStripStatusLabelCursorPosition.Name = "toolStripStatusLabelCursorPosition";
-            this.toolStripStatusLabelCursorPosition.Padding = new System.Windows.Forms.Padding(2);
-            this.toolStripStatusLabelCursorPosition.Size = new System.Drawing.Size(50, 20);
-            this.toolStripStatusLabelCursorPosition.Text = "Pos: (0)";
-            // 
-            // toolStripStatusLabelLength
-            // 
-            this.toolStripStatusLabelLength.Name = "toolStripStatusLabelLength";
-            this.toolStripStatusLabelLength.Size = new System.Drawing.Size(56, 17);
-            this.toolStripStatusLabelLength.Text = "Length: 0";
             // 
             // tabControlMain
             // 
@@ -267,6 +289,7 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelLength;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelZoom;
     }
 }
 
