@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.IO;
+using System.Drawing;
 
 namespace NotePad3
 {
@@ -75,6 +76,24 @@ namespace NotePad3
                 textBoxDocument.WordWrap = true;
                 wordWrapToolStripMenuItem.Checked = true;
             }
+        }
+
+        private void darkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBoxDocument.ForeColor = Color.White;
+            textBoxDocument.BackColor = Color.Black;
+        }
+
+        private void lightToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBoxDocument.ForeColor = Color.Black;
+            textBoxDocument.BackColor = Color.White;
+        }
+
+        private void hackerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBoxDocument.ForeColor = Color.LightGreen;
+            textBoxDocument.BackColor = Color.Black;
         }
     }
 }
